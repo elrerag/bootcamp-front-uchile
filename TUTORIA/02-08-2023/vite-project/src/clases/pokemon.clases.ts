@@ -1,7 +1,7 @@
 //creamos la primera clase
 import axios from "axios";
 // no olvidar al inicio el import
-import { PokeAPIResponse } from "../interfaces/pokeapi-response.interfaces"
+import { Users } from "../interfaces/pokeapi-response.interfaces"
 
 export class Pokemon {
     //creamos el constructor y sus atributos
@@ -17,9 +17,10 @@ export class Pokemon {
     }
 
     // se especifica la promesa dentro del metodo
-    async getMoves(): Promise<PokeAPIResponse>{
-        let { data } = await axios.get<PokeAPIResponse>("https://pokeapi.co/api/v2/pokemon/4");
+    async getMoves(): Promise<Users>{
+        let { data } = await axios.get<Users>("https://jsonplaceholder.typicode.com/users");
         console.log(data);
+        debugger;
         return data;
 
     }

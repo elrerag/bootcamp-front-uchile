@@ -1,4 +1,5 @@
 //creamos la primera clase
+import axios from "axios";
 
 export class Pokemon {
     //creamos el constructor y sus atributos
@@ -14,9 +15,10 @@ export class Pokemon {
     }
 
     // se especifica la promesa
-    getMoves(): number {
-        const moves = 10;
-        return moves;
+    async getMoves() {
+        let { data } = await axios.get("https://pokeapi.co/api/v2/pokemon/4");
+        console.log(data);
+        return data;
     }
 }
 
